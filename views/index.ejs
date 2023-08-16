@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor de YouTube a WAV/MP3</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <div class="top-container">
+    <form action="/convert-mp3" method="POST" id="form">
+      <h1>Youtube MP3 DOWNLOADER</h1>
+      <!--
+      <label for="youtube-link">Ingrese el enlace de YouTube:</label>
+      <input type="text" id="youtube-link" name="youtube_link" placeholder="Ej: https://www.youtube.com/watch?v=VIDEO_ID" required>
+    
+
+      <label for="output-format">Seleccione el formato de salida:</label>
+      <select id="output-format" name="output_format">
+        <option value="wav">WAV</option>
+        <option value="mp3">MP3</option>
+      </select>
+
+      -->
+
+      <input type="text" name="videoID" placeholder="Video ID"><button id="convert-btn">Convert</button>
+    </form>
+  </div>
+
+  <div class="bottom-container">
+    <% if(typeof success != "undefined" && success) {%>
+        <div class="success">
+            <p><%= song_title %></p>
+            <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+        </div>
+    <%} else if(typeof success != "undefined" && !success) { %>
+        <div class="errors">
+            <p><%= message%></p>
+        </div>
+    <%} %>
+  </div>
+</body>
+</html>
